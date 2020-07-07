@@ -1,16 +1,15 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  // 動作が分かりやすいように headless: false と slowMoを設定している
-  // const browser = await puppeteer.launch();
   const browser = await puppeteer.launch({ headless: false, slowMo: 300 });
   const page = await browser.newPage();
 
-  // ページにアクセス
-  await page.goto('https://example.com');
-
-  // スクリーンショットほ保存
-  await page.screenshot({ path: 'example.png' });
+  await page.goto('https://google.com');
+  await page.type('input[name="q"]', 'puppeteer');
+  await page.click('input[name="btnK"]');
+  await page.waitForSelector('#search');
+  await page.click('a[href="https://pptr.dev/"]');
+  await page.waitForSelector('content-box');
 
   await browser.close();
 })();
