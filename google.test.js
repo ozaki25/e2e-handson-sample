@@ -1,21 +1,28 @@
-describe('Google検索', () => {
-  beforeAll(async () => {});
-
-  test('Googleでpuppeteerを検索してGitHubにアクセスする', async () => {
+describe('Googleでpuppeteerを検索してリポジトリにアクセスする', () => {
+  beforeAll(async () => {
     jest.setTimeout(30000);
+  });
+
+  test('Googleにアクセス', async () => {
     await page.goto('https://google.com');
     await page.screenshot({ path: '1.png', fullPage: true });
+  });
 
+  test('検索ワードを入力', async () => {
     await expect(page).toFill('input[name="q"]', 'puppeteer');
     await page.screenshot({ path: '2.png', fullPage: true });
+  });
 
+  test('検索ボタンを押して結果表示', async () => {
     await Promise.all([
       expect(page).toClick('input[name="btnK"]'),
       page.waitForNavigation(),
     ]);
     await expect(page).toMatchElement('#search');
     await page.screenshot({ path: '3.png', fullPage: true });
+  });
 
+  test('Puppeteerのリポジトリを選択して遷移', async () => {
     await Promise.all([
       expect(page).toClick('a[href="https://github.com/puppeteer/puppeteer"]'),
       page.waitForNavigation(),
