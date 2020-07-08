@@ -4,8 +4,8 @@ describe('example', () => {
   });
 
   test('example.comにアクセスできること', async () => {
-    const result = page.title(); // ページのタイトルを取得
+    const result = await page.title(); // ページのタイトルを取得
     const expected = 'Example Domain';
-    await expect(result).resolves.toMatch(expected);
+    expect(result).toBe(expected);
   });
 });
