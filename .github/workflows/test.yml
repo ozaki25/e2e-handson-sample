@@ -15,3 +15,6 @@ jobs:
       - name: test
         run: |
           npx jest
+      - name: regsuit
+        run: |
+          npx regsuit run
