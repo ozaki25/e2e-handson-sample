@@ -19,9 +19,9 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
       page.waitForNavigation(),
     ]);
     await expect(page).toMatchElement('#search');
-    await expect(page).toMatchElement('#result-stats', {
-      text: '約 6,380,000 件',
-    });
+    // await expect(page).toMatchElement('#result-stats', {
+    //   text: '約 6,380,000 件',
+    // });
     await page.screenshot({ path: 'screenshots/3.png', fullPage: true });
   });
 
