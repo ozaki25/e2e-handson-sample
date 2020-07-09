@@ -18,6 +18,3 @@ jobs:
       - name: regsuit
         run: |
           npx reg-suit run
-        env:
-          AWS_SECRET_ACCESS_KEY: ${{ seacret.AWS_SECRET_ACCESS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ seacret.AWS_ACCESS_KEY_ID }}
