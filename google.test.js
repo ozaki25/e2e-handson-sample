@@ -5,12 +5,12 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
 
   test('Googleにアクセス', async () => {
     await page.goto('https://google.com');
-    await page.screenshot({ path: '1.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/1.png', fullPage: true });
   });
 
   test('検索ワードを入力', async () => {
-    await expect(page).toFill('input[name="q"]', 'puppeteer');
-    await page.screenshot({ path: '2.png', fullPage: true });
+    await expect(page).toFill('input[name="q"]', 'puppeteerr');
+    await page.screenshot({ path: 'screenshots/2.png', fullPage: true });
   });
 
   test('検索ボタンを押して結果表示', async () => {
@@ -22,7 +22,7 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
     await expect(page).toMatchElement('#result-stats', {
       text: '約 6,480,000 件',
     });
-    await page.screenshot({ path: '3.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/3.png', fullPage: true });
   });
 
   test('Puppeteerのリポジトリを選択して遷移', async () => {
@@ -31,6 +31,6 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
       page.waitForNavigation(),
     ]);
     await expect(page).toMatch('puppeteer/puppeteer');
-    await page.screenshot({ path: '4.png', fullPage: true });
+    await page.screenshot({ path: 'screenshots/4.png', fullPage: true });
   });
 });
