@@ -9,7 +9,7 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
   });
 
   test('検索ワードを入力', async () => {
-    await expect(page).toFill('input[name="q"]', 'puppeteerr');
+    await expect(page).toFill('input[name="q"]', 'puppeteer');
     await page.screenshot({ path: 'screenshots/2.png', fullPage: true });
   });
 
@@ -20,7 +20,7 @@ describe('Googleでpuppeteerを検索してリポジトリにアクセスする'
     ]);
     await expect(page).toMatchElement('#search');
     await expect(page).toMatchElement('#result-stats', {
-      text: '約 6,480,000 件',
+      text: '約 6,380,000 件',
     });
     await page.screenshot({ path: 'screenshots/3.png', fullPage: true });
   });
