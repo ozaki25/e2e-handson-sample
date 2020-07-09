@@ -17,4 +17,4 @@ jobs:
           npx jest
       - name: regsuit
         run: |
-          npx regsuit run
+          npx reg-suit run
