@@ -8,6 +8,10 @@
     "puppeteer": "^5.0.0"
   },
   "devDependencies": {
-    "jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "reg-keygen-git-hash-plugin": "^0.8.5",
+    "reg-notify-github-plugin": "^0.8.5",
+    "reg-publish-s3-plugin": "^0.9.0",
+    "reg-suit": "^0.10.2"
   }
 }
