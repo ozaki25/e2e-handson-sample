@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
   await page.goto('https://google.com');
   await page.screenshot({ path: 'screenshots/1.png', fullPage: true });
 
-  await page.type('input[name="q"]', 'puppeteerr');
+  await page.type('input[name="q"]', 'puppeteer');
   await page.screenshot({ path: 'screenshots/2.png', fullPage: true });
 
   await Promise.all([
